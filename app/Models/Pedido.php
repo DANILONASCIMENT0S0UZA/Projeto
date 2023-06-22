@@ -69,7 +69,7 @@ class Pedido extends Model
                                 'id_tipo_pagamento',
                                 'id_tipo_pagamento');
      }
-    public function produtos():object{
+    public function pedidos():object{
         return $this->belongsTo(Pedidos::class,
                                 'id_pedido',
                                 'id_pedido');
