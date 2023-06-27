@@ -17,7 +17,7 @@ class PedidoProduto extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'pedidos_produtos';
-    protected $primarykey = 'id_pedido_produtos';
+    protected $primarykey = 'id_pedido_produto';
     protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [
@@ -51,5 +51,5 @@ class PedidoProduto extends Model
                                  'id_produto_tamanho',
                                  'id_produto_tamanho');
       }
-   
+
 }
