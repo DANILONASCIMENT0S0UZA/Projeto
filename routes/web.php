@@ -50,8 +50,8 @@ Route::middleware('auth')->group(function () {
   Route::get('/{id}','show')->name('cargo.show');
   Route::get('/edit/{id}','edit')->name('cargo.edit');
   Route::get('/store','store')->name('cargo.store');
-  Route::get('/update','update')->name('cargo.update');
-  Route::get('/destroy','destroy')->name('cargo.destroy');
+  Route::post('/update','update')->name('cargo.update');
+  Route::post('/destroy/{id}','destroy')->name('cargo.destroy');
  });
 
  /**
@@ -68,8 +68,8 @@ Route::middleware('auth')->group(function () {
   Route::get('/{id}','show')->name('cliente.show');
   Route::get('/edit/{id}','edit')->name('cliente.edit');
   Route::get('/store','store')->name('cliente.store');
-  Route::get('/update','update')->name('cliente.update');
-  Route::get('/destroy','destroy')->name('cliente.destroy');
+  Route::post('/update','update')->name('cliente.update');
+  Route::post('/destroy/{id}','destroy')->name('cliente.destroy');
  });
 
  /**
@@ -86,8 +86,8 @@ Route::middleware('auth')->group(function () {
   Route::get('/{id}','show')->name('endereco.show');
   Route::get('/edit/{id}','edit')->name('endereco.edit');
   Route::get('/store','store')->name('endereco.store');
-  Route::get('/update','update')->name('endereco.update');
-  Route::get('/destroy','destroy')->name('endereco.destroy');
+  Route::post('/update','update')->name('endereco.update');
+  Route::post('/destroy/{id}','destroy')->name('endereco.destroy');
  });
 
  /**
@@ -104,8 +104,8 @@ Route::middleware('auth')->group(function () {
  Route::get('/{id}','show')->name('pedido.show');
  Route::get('/edit/{id}','edit')->name('pedido.edit');
  Route::get('/store','store')->name('pedido.store');
- Route::get('/update','update')->name('pedido.update');
- Route::get('/destroy','destroy')->name('pedido.destroy');
+ Route::post('/update','update')->name('pedido.update');
+ Route::post('/destroy/{id}','destroy')->name('pedido.destroy');
  });
 
  /**
@@ -122,8 +122,8 @@ Route::middleware('auth')->group(function () {
   Route::get('/{id}','show')->name('produto.show');
   Route::get('/edit/{id}','edit')->name('produto.edit');
   Route::get('/store','store')->name('produto.store');
-  Route::get('/update','update')->name('produto.update');
-  Route::get('/destroy','destroy')->name('produto.destroy');
+  Route::post('/update','update')->name('produto.update');
+  Route::post('/destroy/{id}','destroy')->name('produto.destroy');
  });
 
  /**
@@ -140,7 +140,7 @@ Route::middleware('auth')->group(function () {
  Route::get('/{id}','show')->name('tamanho.show');
  Route::get('/edit/{id}','edit')->name('tamanho.edit');
  Route::get('/store','store')->name('tamanho.store');
- Route::get('/update','update')->name('tamanho.update');
- Route::get('/destroy','destroy')->name('tamanho.destroy');
+ Route::post('/update','update')->name('tamanho.update');
+ Route::post('/destroy/{id}','destroy')->name('tamanho.destroy');
  });
 require __DIR__.'/auth.php';
