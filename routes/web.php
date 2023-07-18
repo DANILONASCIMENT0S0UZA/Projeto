@@ -121,6 +121,8 @@ Route::middleware('auth')->group(function () {
   Route::get('/novo','create')->name('produto.create');
   Route::get('/{id}','show')->name('produto.show');
   Route::get('/edit/{id}','edit')->name('produto.edit');
+  Route::get('/tamanho/{id_produto}','createTamanho')->name('produto.createTamanho');
+  Route::get('/tamanho/editar/{id_produto}','editTamanho')->name('produto.editTamanho');
   Route::get('/store','store')->name('produto.store');
   Route::post('/update','update')->name('produto.update');
   Route::post('/destroy/{id}','destroy')->name('produto.destroy');
