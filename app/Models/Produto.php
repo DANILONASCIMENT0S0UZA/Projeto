@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\TipoProduto;
+use App\Models\{
+    TipoProduto,
+    ProdutoTamanho
+};
 
 class Produto extends Model
 {
@@ -35,5 +38,17 @@ class Produto extends Model
         return $this->belongsTo(User::class,
                                 'id_tipo_produto',
                                 'id_tipo_produto');
+     }
+
+     public function tipo():object{
+        return $this->belongsTo(TipoProduto::class,
+                                'id_tipo_produto',
+                                'id_tipo_produto');
+     }
+
+     public function tamanhos():object{
+        return $this->belongsTo(ProdutoTamanho::class,
+                                'id_produto_tamanho',
+                                'id_produto_tamanho');
      }
 }
