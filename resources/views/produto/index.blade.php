@@ -5,9 +5,9 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th class="col-1">Ações</th>
-            <th class="col-1">ID</th>
-            <th class="col-1">Produto</th>
+            <th class="col-2">Ações</th>
+            <th class="col-2">ID</th>
+            <th class="col-2">Produto</th>
             <th class="col-1">Qtd Tamanhos</th>
         </tr>
     </thead>

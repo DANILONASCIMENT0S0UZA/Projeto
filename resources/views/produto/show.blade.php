@@ -1,25 +1,48 @@
 @extends('layouts.base')
 @section('content')
 
-<h1> Cargo:{{ $cargo->cargo}}</h1>
-<h2> Relação de Usuário com esse cargo</h2>
+<h1> Produto:{{ $produto->nome}}</h1>
+<h2> Tipo: {{$produto->tipo->tipo}}</h2>
+<p>Descrição: {!! nl2br($produto->descricao)!!}</p>
+@if ($produto->observacoes)
+    <p class="alert alert-info">{!! nl2br($produto->observacoes) !!}</p>
+@endif
 
-<table>
+<table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>Ações</th>
-            <th>Nome</th>
+            <th class="col-1">Ações</th>
+            <th class="col-1">Tamanho</th>
+            <th class="col-1">Preço</th>
+            <th class="col-1">Obs.:</th>
         </tr>
     </thead>
     <tbody>
+       @forelse ($produto->tamanhos()->get() as $item)
+
         <tr>
-            <td><a href="#">Editar</a>
-                <a href="#">Ver</a>
+            <td>
+            <a class="btn btn-primary" href="#"><i class="bi bi-pencil-square"></i></a>
             </td>
             <td>
-                ---
+                {!!$item->tamanho->tamanho!!}
+            </td>
+            <td>
+                {{$item->preco}}
+            </td>
+            <td>
+                {!! nl2br($item->observacoes)!!}
             </td>
         </tr>
+
+        @empty
+
+        <tr>
+            <td colspan="4">
+                nenhum tamanho definido para esse produto
+            </td>
+        </tr>
+        @endforelse
     </tbody>
 </table>
 
