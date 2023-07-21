@@ -1,5 +1,8 @@
 @extends('layouts.base')
 @section('content')
+{{-- menu --}}
+@include('produto.partials.menu')
+{{-- /menu --}}
 
 <h1> Produto:{{ $produto->nome}}</h1>
 <h2> Tipo: {{$produto->tipo->tipo}}</h2>
@@ -9,6 +12,12 @@
 @endif
 
 <table class="table table-striped table-hover">
+    <h6>
+        <a class="btn btn-success" href="{{ route('produto.createTamanho', ['id_produto'=>$produto->id_produto]) }}">
+            Adicionar Novo Tamanho
+        </a>
+    </h6>
+
     <thead>
         <tr>
             <th class="col-1">Ações</th>
